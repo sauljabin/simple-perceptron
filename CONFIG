@@ -1,0 +1,10 @@
+#CONFIGURATION
+#Tue Feb 25 19:44:21 VET 2014
+APP_LICENSE=GNU General Public License
+OS_ARCH=x86
+TRANSLATE=es_VE
+APP_AUTHOR=SAUL PIÑA
+TRANSLATE_PATH=translate/
+LIB_PATH=lib/
+APP_NAME=SimplePerceptron
+OS=Windows 7
