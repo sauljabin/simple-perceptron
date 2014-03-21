@@ -1,0 +1,16 @@
+GUI_APPDESCRIP=Perceptrón Simple
+GUI_NAME=Nombre
+GUI_VALUE=Valor
+GUI_OPTIONS=Opciones
+GUI_SHOWCONFIG=Ver Configuración
+GUI_CLOSE=Cerrar
+GUI_HELP=Ayuda
+GUI_ABOUT=Sobre
+GUI_TRAININGSVALUE=Valores de entrenamiento
+GUI_DESIREDOUTPUT=Salidas esperadas
+GUI_RESULTS=Resultados
+GUI_LEARNINGFACTOR=Factor de aprendizaje
+GUI_MAXPERIODS=Épocas máximas
+GUI_TRAINING=Entrenar
+GUI_OPEN=Abrir
+GUI_PATHEMPTY=Ruta de archivo vacía
