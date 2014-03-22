@@ -1,3 +1,23 @@
+/**
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ *		SAUL PIÑA - SAULJP07@GMAIL.COM
+ *		2014
+ */
+
 package app.gui;
 
 import java.awt.BorderLayout;
@@ -50,6 +70,9 @@ public class ViewApp extends JFrame {
 	private JPanel pnlLateral;
 	private JButton btnTraining;
 	private JButton btnClose;
+	private JTextField txtName;
+	private JTextField pathTestValues;
+	private JButton btnPathTestValues;
 
 	public ViewApp() {
 		menuItems = new Vector<JMenuItem>();
@@ -77,7 +100,7 @@ public class ViewApp extends JFrame {
 
 	private void init() {
 		setLayout(new BorderLayout());
-		setSize(600, 350);
+		setSize(600, 400);
 		setTitle(Config.get("APP_NAME"));
 
 		menuBar = new JMenuBar();
@@ -102,6 +125,10 @@ public class ViewApp extends JFrame {
 		pnlCentral.setLayout(new MigLayout());
 		add(pnlCentral, BorderLayout.CENTER);
 
+		pnlCentral.add(new JLabel(Translate.get("GUI_NAME")));
+		txtName = new JTextField();
+		pnlCentral.add(txtName, "width 300, height 25, wrap");
+
 		pnlCentral.add(new JLabel(Translate.get("GUI_TRAININGSVALUE")));
 		pathFileTraining = new JTextField();
 		pnlCentral.add(pathFileTraining, "width 300, height 25");
@@ -113,6 +140,12 @@ public class ViewApp extends JFrame {
 		pnlCentral.add(pathDesiredOutput, "width 300, height 25");
 		btnPathDesiredOutput = new JButton("...");
 		pnlCentral.add(btnPathDesiredOutput, "width 20, height 25, wrap");
+
+		pnlCentral.add(new JLabel(Translate.get("GUI_TESTVALUES")));
+		pathTestValues = new JTextField();
+		pnlCentral.add(pathTestValues, "width 300, height 25");
+		btnPathTestValues = new JButton("...");
+		pnlCentral.add(btnPathTestValues, "width 20, height 25, wrap");
 
 		pnlCentral.add(new JLabel(Translate.get("GUI_RESULTS")));
 		pathResults = new JTextField();
@@ -158,6 +191,7 @@ public class ViewApp extends JFrame {
 		buttons.add(btnPathFileTraining);
 		buttons.add(btnPathResults);
 		buttons.add(btnTraining);
+		buttons.add(btnPathTestValues);
 
 	}
 
@@ -219,6 +253,22 @@ public class ViewApp extends JFrame {
 
 	public JButton getBtnClose() {
 		return btnClose;
+	}
+
+	public JTextField getTxtName() {
+		return txtName;
+	}
+
+	public void setTxtName(JTextField txtName) {
+		this.txtName = txtName;
+	}
+
+	public JTextField getPathTestValues() {
+		return pathTestValues;
+	}
+
+	public JButton getBtnPathTestValues() {
+		return btnPathTestValues;
 	}
 
 }

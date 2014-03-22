@@ -13,4 +13,21 @@ GUI_LEARNINGFACTOR=Factor de aprendizaje
 GUI_MAXPERIODS=Épocas máximas
 GUI_TRAINING=Entrenar
 GUI_OPEN=Abrir
-GUI_PATHEMPTY=Ruta de archivo vacía
+GUI_PERIODS=Épocas
+GUI_TESTVALUES=Valores de prueba
+GUI_INPUT=Entrada
+GUI_OUTPUT=Salida
+GUI_ERROR=Error
+GUI_FACTOR=Factor
+
+ERROR_NAMEEMPTY=El nombre no puede ser vacío
+ERROR_PATHEMPTY=Ruta de archivo vacía
+ERROR_LOADTRAININGVALUES=Error al cargar valores de entrenamiento
+ERROR_LOADDESIREDOUTPUT=Error al cargar las salidas deseadas
+ERROR_SAVERESULTS=Error al guardar resultados
+ERROR_LOADTESTVALUES=Error al cargar valores de prueba
+ERROR_SAVERESULTSIMAGE=Error al guardar gráfico de resultados
+
+INFO_INITTRAINING=Iniciando entrenamiento
+INFO_FINISHTRAINING=Entrenamiento finalizado
+INFO_SAVERESULTS=Resultados guardados

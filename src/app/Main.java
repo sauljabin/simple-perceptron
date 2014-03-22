@@ -35,6 +35,7 @@ public class Main {
 	private static void loadFeatures() {
 		try {
 			Config.load();
+			Config.save();
 			Translate.load();
 		} catch (Exception e) {
 			Log.error(Main.class, "loadFeatures()", e);
