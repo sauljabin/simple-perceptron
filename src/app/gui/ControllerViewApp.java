@@ -149,22 +149,32 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 			return;
 		}
 
+		viewApp.getTxtName().setEnabled(false);
 		viewApp.getBtnPathFileTraining().setEnabled(false);
 		viewApp.getBtnPathResults().setEnabled(false);
 		viewApp.getBtnTraining().setEnabled(false);
+		viewApp.getBtnPathTestValues().setEnabled(false);
 		viewApp.getPathFileTraining().setEnabled(false);
 		viewApp.getPathResults().setEnabled(false);
+		viewApp.getPathTestValues().setEnabled(false);
+		viewApp.getSpiFactor().setEnabled(false);
+		viewApp.getSpiMaxPeriods().setEnabled(false);
 
 		threadTraining = new Thread(this);
 		threadTraining.start();
 	}
 
 	public void enable() {
+		viewApp.getTxtName().setEnabled(true);
 		viewApp.getBtnPathFileTraining().setEnabled(true);
 		viewApp.getBtnPathResults().setEnabled(true);
 		viewApp.getBtnTraining().setEnabled(true);
+		viewApp.getBtnPathTestValues().setEnabled(true);
 		viewApp.getPathFileTraining().setEnabled(true);
 		viewApp.getPathResults().setEnabled(true);
+		viewApp.getPathTestValues().setEnabled(true);
+		viewApp.getSpiFactor().setEnabled(true);
+		viewApp.getSpiMaxPeriods().setEnabled(true);
 	}
 
 	@Override
