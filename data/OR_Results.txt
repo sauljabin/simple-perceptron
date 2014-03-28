@@ -1,7 +1,7 @@
 Nombre: OR
 
 Factor	Épocas
-0.001	44
+0.001	39
 
 Épocas	Error
 0	1
@@ -42,12 +42,7 @@ Factor	Épocas
 35	1
 36	1
 37	1
-38	1
-39	1
-40	1
-41	1
-42	1
-43	0
+38	0
 
 Valores de prueba
 Entrada	Salida
