@@ -61,8 +61,6 @@ public class ViewApp extends JFrame {
 	private JPanel pnlCentral;
 	private JTextField pathFileTraining;
 	private JButton btnPathFileTraining;
-	private JTextField pathDesiredOutput;
-	private JButton btnPathDesiredOutput;
 	private JTextField pathResults;
 	private JButton btnPathResults;
 	private JSpinner spiFactor;
@@ -100,7 +98,7 @@ public class ViewApp extends JFrame {
 
 	private void init() {
 		setLayout(new BorderLayout());
-		setSize(600, 400);
+		setSize(600, 350);
 		setTitle(Config.get("APP_NAME"));
 
 		menuBar = new JMenuBar();
@@ -134,12 +132,6 @@ public class ViewApp extends JFrame {
 		pnlCentral.add(pathFileTraining, "width 300, height 25");
 		btnPathFileTraining = new JButton("...");
 		pnlCentral.add(btnPathFileTraining, "width 20, height 25, wrap");
-
-		pnlCentral.add(new JLabel(Translate.get("GUI_DESIREDOUTPUT")));
-		pathDesiredOutput = new JTextField();
-		pnlCentral.add(pathDesiredOutput, "width 300, height 25");
-		btnPathDesiredOutput = new JButton("...");
-		pnlCentral.add(btnPathDesiredOutput, "width 20, height 25, wrap");
 
 		pnlCentral.add(new JLabel(Translate.get("GUI_TESTVALUES")));
 		pathTestValues = new JTextField();
@@ -187,7 +179,6 @@ public class ViewApp extends JFrame {
 		menuItems.add(menuItemClose);
 		menuItems.add(menuItemAbout);
 		buttons.add(btnClose);
-		buttons.add(btnPathDesiredOutput);
 		buttons.add(btnPathFileTraining);
 		buttons.add(btnPathResults);
 		buttons.add(btnTraining);
@@ -221,14 +212,6 @@ public class ViewApp extends JFrame {
 
 	public JButton getBtnPathFileTraining() {
 		return btnPathFileTraining;
-	}
-
-	public JTextField getPathDesiredOutput() {
-		return pathDesiredOutput;
-	}
-
-	public JButton getBtnPathDesiredOutput() {
-		return btnPathDesiredOutput;
 	}
 
 	public JTextField getPathResults() {

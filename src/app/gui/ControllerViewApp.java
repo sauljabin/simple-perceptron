@@ -91,9 +91,7 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 		else if (source.equals(viewApp.getBtnClose()))
 			close();
 		else if (source.equals(viewApp.getBtnTraining()))
-			training();
-		else if (source.equals(viewApp.getBtnPathDesiredOutput()))
-			getPathDesiredOutput();
+			training();		
 		else if (source.equals(viewApp.getBtnPathFileTraining()))
 			getPathFileTraining();
 		else if (source.equals(viewApp.getBtnPathResults()))
@@ -128,16 +126,6 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 		}
 	}
 
-	public void getPathDesiredOutput() {
-		String path = viewApp.getPathDesiredOutput().getText();
-		if (path.trim().isEmpty())
-			path = ".";
-		File file = fileChooser(path);
-		if (file != null) {
-			viewApp.getPathDesiredOutput().setText(file.getAbsolutePath());
-		}
-	}
-
 	private void getPathTestValues() {
 		String path = viewApp.getPathTestValues().getText();
 		if (path.trim().isEmpty())
@@ -156,16 +144,14 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 			return;
 		}
 
-		if (viewApp.getPathTestValues().getText().trim().isEmpty() || viewApp.getPathDesiredOutput().getText().trim().isEmpty() || viewApp.getPathFileTraining().getText().trim().isEmpty() || viewApp.getPathResults().getText().trim().isEmpty()) {
+		if (viewApp.getPathTestValues().getText().trim().isEmpty() || viewApp.getPathFileTraining().getText().trim().isEmpty() || viewApp.getPathResults().getText().trim().isEmpty()) {
 			JOptionPane.showMessageDialog(viewApp, Translate.get("ERROR_PATHEMPTY"), Translate.get("GUI_ERROR"), JOptionPane.ERROR_MESSAGE);
 			return;
 		}
 
-		viewApp.getBtnPathDesiredOutput().setEnabled(false);
 		viewApp.getBtnPathFileTraining().setEnabled(false);
 		viewApp.getBtnPathResults().setEnabled(false);
 		viewApp.getBtnTraining().setEnabled(false);
-		viewApp.getPathDesiredOutput().setEnabled(false);
 		viewApp.getPathFileTraining().setEnabled(false);
 		viewApp.getPathResults().setEnabled(false);
 
@@ -174,11 +160,9 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 	}
 
 	public void enable() {
-		viewApp.getBtnPathDesiredOutput().setEnabled(true);
 		viewApp.getBtnPathFileTraining().setEnabled(true);
 		viewApp.getBtnPathResults().setEnabled(true);
 		viewApp.getBtnTraining().setEnabled(true);
-		viewApp.getPathDesiredOutput().setEnabled(true);
 		viewApp.getPathFileTraining().setEnabled(true);
 		viewApp.getPathResults().setEnabled(true);
 	}
@@ -193,55 +177,43 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 		UtilFileText uft = new UtilFileText();
 		String pathFileTraining = viewApp.getPathFileTraining().getText();
 		String pathTestValues = viewApp.getPathTestValues().getText();
-		String pathDesiredOutput = viewApp.getPathDesiredOutput().getText();
 		String pathResults = viewApp.getPathResults().getText();
 		String name = viewApp.getTxtName().getText();
 		double learningFactor = (double) viewApp.getSpiFactor().getValue();
 		int maxPeriods = (int) viewApp.getSpiMaxPeriods().getValue();
 		List<String> trainingValuesList;
-		List<String> desiredOutputList;
 		List<String> testValuesList;
 		int[][] trainingValues;
-		int[][] desiredOutput;
+		int[] desiredOutput;
 		int[][] testValues;
 
 		try {
 			trainingValuesList = uft.readFileToList(pathFileTraining);
 			trainingValues = new int[trainingValuesList.size()][];
+			desiredOutput = new int[trainingValuesList.size()];
 		} catch (IOException e) {
 			enable();
 			Log.error(ControllerViewApp.class, Translate.get("ERROR_LOADTRAININGVALUES"), e);
 			return;
 		}
 
-		int n = 0;
-		for (String s : trainingValuesList) {
-			String[] inputString = s.split(",");
+		for (int i = 0; i < trainingValuesList.size(); i++) {
+			String s = trainingValuesList.get(i);
+
+			String[] string = s.split(";");
+
+			String[] inputString = string[0].split(",");
 			int[] input = new int[inputString.length];
-			for (int i = 0; i < input.length; i++) {
-				input[i] = Integer.parseInt(inputString[i]);
-			}
-			trainingValues[n++] = input;
-		}
 
-		try {
-			desiredOutputList = uft.readFileToList(pathDesiredOutput);
-			desiredOutput = new int[desiredOutputList.size()][];
-		} catch (IOException e) {
-			enable();
-			Log.error(ControllerViewApp.class, Translate.get("ERROR_LOADDESIREDOUTPUT"), e);
-			return;
-		}
+			String[] outputString = string[1].split(",");
 
-		int m = 0;
-		for (String s : desiredOutputList) {
-			String[] inputString = s.split(",");
-			int[] output = new int[inputString.length];
-			for (int i = 0; i < output.length; i++) {
-				output[i] = Integer.parseInt(inputString[i]);
-			}
-			desiredOutput[m++] = output;
-		}
+			for (int j = 0; j < input.length; j++) {
+				input[j] = Integer.parseInt(inputString[j]);
+			}			
+
+			trainingValues[i] = input;
+			desiredOutput[i] = Integer.parseInt(outputString[0]);
+		}		
 
 		try {
 			testValuesList = uft.readFileToList(pathTestValues);
@@ -264,7 +236,7 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 
 		Log.info(ControllerViewApp.class, Translate.get("INFO_INITTRAINING"));
 		perceptron = new SimplePerceptron(learningFactor, maxPeriods);
-		perceptron.training(trainingValues, desiredOutput[0]);
+		perceptron.training(trainingValues, desiredOutput);
 		Log.info(ControllerViewApp.class, Translate.get("INFO_FINISHTRAINING"));
 
 		String print = Translate.get("GUI_NAME") + ": " + name;
