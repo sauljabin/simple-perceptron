@@ -91,7 +91,7 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 		else if (source.equals(viewApp.getBtnClose()))
 			close();
 		else if (source.equals(viewApp.getBtnTraining()))
-			training();		
+			training();
 		else if (source.equals(viewApp.getBtnPathFileTraining()))
 			getPathFileTraining();
 		else if (source.equals(viewApp.getBtnPathResults()))
@@ -209,11 +209,11 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 
 			for (int j = 0; j < input.length; j++) {
 				input[j] = Integer.parseInt(inputString[j]);
-			}			
+			}
 
 			trainingValues[i] = input;
 			desiredOutput[i] = Integer.parseInt(outputString[0]);
-		}		
+		}
 
 		try {
 			testValuesList = uft.readFileToList(pathTestValues);
@@ -224,14 +224,15 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 			return;
 		}
 
-		int l = 0;
-		for (String s : testValuesList) {
+		for (int i = 0; i < testValuesList.size(); i++) {
+			String s = testValuesList.get(i);
+
 			String[] inputString = s.split(",");
 			int[] input = new int[inputString.length];
-			for (int i = 0; i < input.length; i++) {
-				input[i] = Integer.parseInt(inputString[i]);
+			for (int j = 0; j < input.length; j++) {
+				input[j] = Integer.parseInt(inputString[j]);
 			}
-			testValues[l++] = input;
+			testValues[i] = input;
 		}
 
 		Log.info(ControllerViewApp.class, Translate.get("INFO_INITTRAINING"));
