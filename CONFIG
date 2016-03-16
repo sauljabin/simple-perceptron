@@ -1,10 +1,10 @@
 #CONFIGURATION
-#Wed Mar 16 17:28:23 ECT 2016
+#Wed Mar 16 17:32:21 ECT 2016
 TRANSLATE_PATH=translate/
 LIB_PATH=lib/
-TRANSLATE=es_VE
 APP_LICENSE=GNU General Public License
-APP_NAME=SimplePerceptron
+TRANSLATE=es_VE
 OS_ARCH=amd64
-OS=Linux
+APP_NAME=SimplePerceptron
 APP_AUTHOR=SAUL PIÑA
+OS=Linux
