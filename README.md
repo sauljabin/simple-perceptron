@@ -21,7 +21,7 @@ make clean
 
 Screenshots
 -----------
-![](documents/screenshot-1.png)
+![](documents/screenshot.png)
 
 
 Resultados

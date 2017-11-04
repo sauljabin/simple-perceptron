@@ -34,6 +34,10 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
     public ControllerViewApp() {
         viewApp = new ViewApp();
         viewApp.setController(this);
+        viewApp.getPathResults().setText("documents/AND_Results.txt");
+        viewApp.getPathFileTraining().setText("documents/AND_TrainingValues.txt");
+        viewApp.getPathTestValues().setText("documents/AND_TestValues.txt");
+        viewApp.getTxtName().setText("AND");
         Log.setLogTextArea(viewApp.getTarConsole());
     }
 
@@ -266,12 +270,18 @@ public class ControllerViewApp extends WindowAdapter implements ActionListener, 
 
         ViewGraphic viewG = new ViewGraphic(name);
 
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         for (int i = 0; i < perceptron.getErrors().size(); i++) {
             viewG.addPoint(i, perceptron.getErrors().get(i));
         }
         try {
             viewG.exportImage(viewApp.getPathResults().getText() + ".png");
-        } catch (IOException e) {
+        } catch (Exception e) {
             Log.error(ControllerViewApp.class, Translate.get("ERROR_SAVERESULTSIMAGE"), e);
         }
 

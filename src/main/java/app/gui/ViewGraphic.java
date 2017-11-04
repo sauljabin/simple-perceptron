@@ -27,8 +27,6 @@ import java.io.IOException;
 
 public class ViewGraphic extends JDialog {
 
-    private static final long serialVersionUID = -7690162952744313595L;
-
     private XYSeriesCollection dataset;
     private JFreeChart chart;
     private XYSeries serieError;
@@ -70,9 +68,9 @@ public class ViewGraphic extends JDialog {
         setVisible(true);
     }
 
-    public void addPoint(int period, int error) {
+    public void addPoint(int period, double error) {
         serieError.add(period, error);
-        lblError.setText(String.format("%d", error));
+        lblError.setText(String.format("%f", error));
     }
 
     public void exportImage(String path) throws IOException {

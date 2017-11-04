@@ -27,8 +27,7 @@ public class UtilImage {
     /**
      * Read an image from disk
      *
-     * @param path
-     *            File path
+     * @param path File path
      * @return BufferedImage image format
      * @throws IOException
      */
@@ -39,8 +38,7 @@ public class UtilImage {
     /**
      * Read an image from disk
      *
-     * @param file
-     *            File
+     * @param file File
      * @return BufferedImage image format
      * @throws IOException
      */
@@ -51,10 +49,8 @@ public class UtilImage {
     /**
      * Write image to disk
      *
-     * @param image
-     *            Image writing
-     * @param path
-     *            File path
+     * @param image Image writing
+     * @param path  File path
      * @return True if was written successfully
      * @throws IOException
      */
@@ -65,10 +61,8 @@ public class UtilImage {
     /**
      * Write image to disk
      *
-     * @param image
-     *            Image writing
-     * @param file
-     *            File
+     * @param image Image writing
+     * @param file  File
      * @return True if was written successfully
      * @throws IOException
      */
@@ -81,10 +75,8 @@ public class UtilImage {
     /**
      * Take a BufferedImage image format and transforms it into binary
      *
-     * @param image
-     *            Image transform
-     * @param extension
-     *            Extension of the image
+     * @param image     Image transform
+     * @param extension Extension of the image
      * @return Image in binary format
      * @throws IOException
      */
@@ -100,8 +92,7 @@ public class UtilImage {
     /**
      * Take a picture as binary array and transforms it into BufferedImage
      *
-     * @param image
-     *            Image in bytes
+     * @param image Image in bytes
      * @return An image type BufferedImage
      * @throws IOException
      */
@@ -115,10 +106,8 @@ public class UtilImage {
      * <p>
      * Rescale the picture as a percentage
      *
-     * @param image
-     *            Image
-     * @param percent
-     *            Percentage
+     * @param image   Image
+     * @param percent Percentage
      * @return Image rescaled
      */
     public BufferedImage resizePercent(BufferedImage image, float percent) {
@@ -135,10 +124,8 @@ public class UtilImage {
      * <p>
      * Take a high and provides maximum image width
      *
-     * @param image
-     *            Image
-     * @param height
-     *            Image height
+     * @param image  Image
+     * @param height Image height
      * @return Image rescaled
      */
     public BufferedImage resizeMaxHeight(BufferedImage image, int height) {
@@ -151,10 +138,8 @@ public class UtilImage {
      * <p>
      * Toma un ancho maximo y proporciona el alto de la imagen
      *
-     * @param image
-     *            Image
-     * @param width
-     *            Image width
+     * @param image Image
+     * @param width Image width
      * @return Image rescaled
      */
     public BufferedImage resizeMaxWidth(BufferedImage image, int width) {
@@ -165,12 +150,9 @@ public class UtilImage {
     /**
      * This function resizes an image without loss
      *
-     * @param image
-     *            Imagen
-     * @param width
-     *            Image width
-     * @param height
-     *            Image height
+     * @param image  Imagen
+     * @param width  Image width
+     * @param height Image height
      * @return Imagen rescaled
      */
     public BufferedImage resize(BufferedImage image, int width, int height) {

@@ -30,10 +30,8 @@ public class UtilFileText {
     private String charset;
 
     /**
-     * @param file
-     *            File
-     * @param charset
-     *            Charset
+     * @param file    File
+     * @param charset Charset
      */
     public UtilFileText(File file, String charset) {
         this.file = file;
@@ -41,26 +39,22 @@ public class UtilFileText {
     }
 
     /**
-     * @param path
-     *            File path
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param charset Charset
      */
     public UtilFileText(String path, String charset) {
         this(new File(path), charset);
     }
 
     /**
-     * @param path
-     *            File path
+     * @param path File path
      */
     public UtilFileText(String path) {
         this(new File(path), CHARSET_UTF_8);
     }
 
     /**
-     * @param file
-     *            File
+     * @param file File
      */
     public UtilFileText(File file) {
         this(file, CHARSET_UTF_8);
@@ -83,8 +77,7 @@ public class UtilFileText {
     /**
      * Set file path
      *
-     * @param path
-     *            File path
+     * @param path File path
      */
     public void setPath(String path) {
         this.file = new File(path);
@@ -102,8 +95,7 @@ public class UtilFileText {
     /**
      * Set file
      *
-     * @param file
-     *            File
+     * @param file File
      */
     public void setFile(File file) {
         this.file = file;
@@ -121,8 +113,7 @@ public class UtilFileText {
     /**
      * Set the charset
      *
-     * @param charset
-     *            Charset, UtilFileText.CHARSET_UTF_8
+     * @param charset Charset, UtilFileText.CHARSET_UTF_8
      */
     public void setCharset(String charset) {
         this.charset = charset;
@@ -151,8 +142,7 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param path
-     *            File path
+     * @param path File path
      * @return Text
      * @throws IOException
      */
@@ -163,8 +153,7 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param path
-     *            File path
+     * @param path File path
      * @return List of lines
      * @throws IOException
      */
@@ -175,8 +164,7 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param file
-     *            File
+     * @param file File
      * @return Text
      * @throws IOException
      */
@@ -187,8 +175,7 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param file
-     *            File
+     * @param file File
      * @return List of lines
      * @throws IOException
      */
@@ -199,10 +186,8 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param path
-     *            File path
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param charset Charset
      * @return Text
      * @throws IOException
      */
@@ -213,10 +198,8 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param path
-     *            File path
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param charset Charset
      * @return List of lines
      * @throws IOException
      */
@@ -227,10 +210,8 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param file
-     *            File
-     * @param charset
-     *            Charset
+     * @param file    File
+     * @param charset Charset
      * @return Text
      * @throws IOException
      */
@@ -248,10 +229,8 @@ public class UtilFileText {
     /**
      * Read a text file
      *
-     * @param file
-     *            File
-     * @param charset
-     *            Charset
+     * @param file    File
+     * @param charset Charset
      * @return List of lines
      * @throws IOException
      */
@@ -269,8 +248,7 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param text
-     *            Text to write
+     * @param text Text to write
      * @throws IOException
      */
     public void writeFile(String text) throws IOException {
@@ -280,8 +258,7 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param text
-     *            Text to write
+     * @param text Text to write
      * @throws IOException
      */
     public void writeFile(List<String> text) throws IOException {
@@ -291,10 +268,8 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param file
-     *            File
-     * @param text
-     *            Text to write
+     * @param file File
+     * @param text Text to write
      * @throws IOException
      */
     public void writeFile(File file, String text) throws IOException {
@@ -304,10 +279,8 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
+     * @param path File path
+     * @param text Text to write
      * @throws IOException
      */
     public void writeFile(String path, String text) throws IOException {
@@ -317,10 +290,8 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param file
-     *            File
-     * @param text
-     *            Text to write
+     * @param file File
+     * @param text Text to write
      * @throws IOException
      */
     public void writeFile(File file, List<String> text) throws IOException {
@@ -330,10 +301,8 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
+     * @param path File path
+     * @param text Text to write
      * @throws IOException
      */
     public void writeFile(String path, List<String> text) throws IOException {
@@ -343,12 +312,9 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void writeFile(String path, String text, String charset) throws IOException {
@@ -358,12 +324,9 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void writeFile(File file, String text, String charset) throws IOException {
@@ -376,12 +339,9 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void writeFile(String path, List<String> text, String charset) throws IOException {
@@ -391,12 +351,9 @@ public class UtilFileText {
     /**
      * Write a text file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void writeFile(File file, List<String> text, String charset) throws IOException {
@@ -411,8 +368,7 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param text
-     *            Text to write
+     * @param text Text to write
      * @throws IOException
      */
     public void appendFile(String text) throws IOException {
@@ -422,8 +378,7 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param text
-     *            Text to write
+     * @param text Text to write
      * @throws IOException
      */
     public void appendFile(List<String> text) throws IOException {
@@ -433,12 +388,9 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void appendFile(String path, String text, String charset) throws IOException {
@@ -448,12 +400,9 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param path    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void appendFile(String path, List<String> text, String charset) throws IOException {
@@ -463,10 +412,8 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
+     * @param path File path
+     * @param text Text to write
      * @throws IOException
      */
     public void appendFile(String path, String text) throws IOException {
@@ -476,10 +423,8 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
+     * @param path File path
+     * @param text Text to write
      * @throws IOException
      */
     public void appendFile(String path, List<String> text) throws IOException {
@@ -489,10 +434,8 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param file
-     *            File
-     * @param text
-     *            Text to write
+     * @param file File
+     * @param text Text to write
      * @throws IOException
      */
     public void appendFile(File file, String text) throws IOException {
@@ -502,10 +445,8 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param path
-     *            File path
-     * @param text
-     *            Text to write
+     * @param path File path
+     * @param text Text to write
      * @throws IOException
      */
     public void appendFile(File file, List<String> text) throws IOException {
@@ -515,12 +456,9 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param file
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param file    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void appendFile(File file, String text, String charset) throws IOException {
@@ -533,12 +471,9 @@ public class UtilFileText {
     /**
      * Append a text to file
      *
-     * @param file
-     *            File path
-     * @param text
-     *            Text to write
-     * @param charset
-     *            Charset
+     * @param file    File path
+     * @param text    Text to write
+     * @param charset Charset
      * @throws IOException
      */
     public void appendFile(File file, List<String> text, String charset) throws IOException {
