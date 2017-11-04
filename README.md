@@ -9,15 +9,23 @@ Perceptrón Simple, red neuronal artificial.
 - Repository: https://github.com/sauljabin/simple-perceptron
 - License: MIT
 - Language: Java
-- IDE: Eclipse
 
+Comandos
+--------
+
+```
+make run
+
+make clean
+```
 
 Screenshots
 -----------
-![](/documents/screenshot-1.png)
+![](documents/screenshot-1.png)
 
 
 Resultados
 ----------
-![](/data/AND_Results.txt.png)
-![](/data/OR_Results.txt.png)
+![](documents/AND_Results.txt.png)
+
+![](documents/OR_Results.txt.png)
